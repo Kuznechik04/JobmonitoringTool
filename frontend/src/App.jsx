@@ -4,20 +4,31 @@ import { Routes, Route } from 'react-router-dom';
 import DashboardPage from './pages/DashboardPage';
 import FavoritesPage from './pages/FavoritesPage';
 import SettingsPage from './pages/SettingsPage';
-import Layout from './components/Layout'; // Layout importieren
+import UserManagementPage from './pages/UserManagementPage'; // NEU
+import LoginPage from './pages/LoginPage'; // NEU
+import Layout from './components/Layout'; 
+import { AuthProvider } from './context/AuthContext'; // NEU: AuthProvider
+import ProtectedRoute from './components/ProtectedRoute'; // NEU: ProtectedRoute
 
-// KORREKTUR: Alle ThemeProvider, CssBaseline und BrowserRouter entfernt.
 function App() {
   return (
-    // Das Layout umschließt alle Seiten
-    <Layout>
-      <Routes>
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="/settings" element={<SettingsPage />} />
-        {/* <Route path="/jobkette/:id" element={<JobKettePage />} /> */}
-      </Routes>
-    </Layout>
+    // 1. Die gesamte App mit dem AuthProvider umschließen
+    <AuthProvider>
+      <Layout>
+        <Routes>
+          {/* 2. Login-Seite ist die neue Startseite */}
+          <Route path="/" element={<LoginPage />} />
+          
+          {/* 3. Alle internen Seiten sind geschützt */}
+          <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+          <Route path="/favorites" element={<ProtectedRoute><FavoritesPage /></ProtectedRoute>} />
+          <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
+          <Route path="/users" element={<ProtectedRoute><UserManagementPage /></ProtectedRoute>} />
+          
+          {/* Fügen Sie hier später die JobKettePage hinzu */}
+        </Routes>
+      </Layout>
+    </AuthProvider>
   );
 }
 

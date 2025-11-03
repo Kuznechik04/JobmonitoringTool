@@ -18,7 +18,7 @@ function SettingsPage() {
                 <Grid container spacing={2}>
                     <Card
                     component={Link} 
-                    to={`/`}
+                    to={`/dashboard`}
                     sx={{
                         position: 'fixed',
                         bottom: 20,
