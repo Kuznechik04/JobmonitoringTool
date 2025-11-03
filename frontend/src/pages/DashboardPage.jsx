@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Typography, Grid, Card, CardContent } from '@mui/material';
-import '../App.css';
 
 const mockJobChains = [
   { id: 1, name: "SAP Datenversorgung", status: "ERFOLGREICH" },
@@ -60,23 +59,16 @@ function DashboardPage() {
   });
 
   return (
-    // Das p: 3 (padding) kommt jetzt von Layout.jsx, hier nicht mehr nötig
     <Box>
       <Typography variant="h4" gutterBottom>
         Gruppen-Dashboard
       </Typography>
       
-      {/* Das Grid-System (bleibt gleich) */}
       <Grid container spacing={3}>
         {sortedChains.map(chain => {
-          
-          // KORREKTUR: Vereinfachte Logik.
-          // Jede Kachel ist 'background.paper' (weiß).
-          const cardBgColor = 'background.paper';
-
           return (
             <Grid item key={chain.id} xs={12} sm={6} md={4}>
-              {/* Die Card-Komponente ist das "Viereck", das du wolltest. */}
+              {/* Die Card-Komponente (globale Styles aus main.jsx werden angewendet) */}
               <Card 
                 component={Link}
                 to={`/jobkette/${chain.id}`}
@@ -85,29 +77,39 @@ function DashboardPage() {
                   height: '100%',
                   textDecoration: 'none',
                   color: 'inherit',
-                  // Transition für den Hover-Effekt
                   transition: 'transform 0.2s, box-shadow 0.2s',
-                  
-                  // Styling für Light-Mode
-                  backgroundColor: cardBgColor, // Weiß
-                  boxShadow: '0px 4px 12px rgba(0,0,0,0.05)', // Dezenter Schatten
-                  
-                  // DEIN GEWÜNSCHTER HOVER-EFFEKT
+                  p: 0, 
+                  overflow: 'hidden',
+                  // KORREKTUR: Explizite Flex-Layout-Definition
+                  display: 'flex',
+                  flexDirection: 'column',
                   '&:hover': {
-                    transform: 'scale(1.02)', // Macht die Kachel größer
-                    boxShadow: '0px 6px 18px rgba(0,0,0,0.12)', // Stärkerer Schatten
+                    transform: 'scale(1.02)', 
+                    boxShadow: '0px 6px 18px rgba(0,0,0,0.12)',
                   }
                 }}
               >
-                {/* Dein Inhalt (Schrift + Status) kommt IN die Kachel */}
-                <CardContent sx={{ p: 3 }}>
+                {/* NEUER Header (wie der blaue "Quiz"-Header) */}
+                <Box 
+                  sx={{ 
+                    backgroundColor: 'primary.main', 
+                    p: 3,
+                  }}
+                >
                   <Typography 
                     variant="h6" 
-                    gutterBottom 
-                    sx={{ color: 'text.primary' }}
+                    sx={{ color: 'white', fontWeight: 'bold' }} 
                   >
                     {chain.name}
                   </Typography>
+                </Box>
+
+                {/* Der CardContent (der weiße Teil) enthält jetzt nur den Status */}
+                <CardContent sx={{ 
+                  p: 4,
+                  // KORREKTUR: Hintergrund ist jetzt auf der Card, hier nicht mehr nötig
+                  // backgroundColor: 'background.paper' 
+                }}>
                   {getStatusChip(chain.status)}
                 </CardContent>
               </Card>

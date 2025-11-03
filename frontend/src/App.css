@@ -1,9 +1,16 @@
+/* * Die meisten Styles hier werden nicht mehr gebraucht,
+ * da das Layout jetzt von MUI (main.jsx, Layout.jsx) gesteuert wird.
+ * Wir kommentieren sie aus, um Konflikte zu vermeiden.
+*/
+
+/*
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
+*/
 
 .logo {
   height: 6em;
