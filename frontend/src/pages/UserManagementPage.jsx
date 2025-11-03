@@ -38,8 +38,13 @@ function UserManagementPage() {
   const fetchUsers = async () => {
     setLoading(true);
     setError('');
+
     try {
-      const response = await fetch(API_URL);
+      const response = await fetch(API_URL, {
+        method: 'GET',
+        credentials: 'include',
+      });
+      
       if (!response.ok) {
         throw new Error('Fehler beim Abrufen der Benutzer');
       }

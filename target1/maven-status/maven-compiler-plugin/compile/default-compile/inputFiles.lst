@@ -1,0 +1,13 @@
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/model/AppUser.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/config/SecurityConfig.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/JobMonitoringToolApplication.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/config/WebConfig.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/repository/UserRepository.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/controller/StatusController.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/service/UserService.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/controller/AuthController.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/service/EmailService.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/payload/LoginRequest.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/controller/TestController.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/service/UserInitializer.java
+/Users/philipweber/Arbeit/Job_Monitoring_Tool/job-monitoring-tool/src/main/java/de/test/dwh/job_monitoring_tool/controller/UserController.java

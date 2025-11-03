@@ -10,8 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
-// Erlaubt den Zugriff von deinem Frontend auf http://localhost:5173
-@CrossOrigin(origins = "http://localhost:5173") 
 public class UserController {
 
     private final UserService userService;
